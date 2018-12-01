@@ -29,9 +29,10 @@ protected:
     char* payloadToString(unsigned short payload, unsigned char length);
     
 private:
-    // ...
-    // ...
-    // ...
+    unsigned char* senderUUID;
+    unsigned char* receiverUUID;
+    unsigned short payload;
+    unsigned char length;
 };
 
 #endif /* Message_hpp */
