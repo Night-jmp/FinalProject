@@ -1,8 +1,29 @@
 #include <avr/eeprom.h>
 #include <Entropy.h>
+#include "RF24.h"
+#include <LiquidCrystal.h>
 #include "Message.hpp"
 #include "Memory.hpp"
 #include "Contact.hpp"
+
+class LCDKeypad : public LiquidCrystal
+{
+  public:
+  LCDKeypad(int rs, int en, int d4, int d5, int d6, int d7) : LiquidCrystal(rs, en, d4, d5, d6, d7){}
+  Button getButtonPress()
+  {
+    //Implement button debouncing
+    /*
+    The Arduino reads the value at the pin and provides a number ranging from 0 - 1023 corresponding to 
+    the input voltage. Since we calculated the voltage at pin A0 to be 0.7081 V we can proceed to map this 
+    value to reflect the Arduino's 10-bit ADC resolution. We know that 5V is represented by the decimal value 
+    1023 and that 0V is represented by 0. We can now map the value accordingly using the Rule of Three. 
+    We find out that the value at the pin read by the Arduino is around 144.
+    */
+  }
+  private:
+  typedef enum {LEFT, RIGHT, UP, DOWN, SELECT, NONE} Button;
+}
 
 class Eeprom {
   public:
