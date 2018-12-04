@@ -22,9 +22,8 @@ public:
     // Add as you see fit
     
 private:
-    // ...
-    // ...
-    // ...
+    char const* name;
+    unsigned char* UUID;
 };
 
 #endif /* Contact_hpp */

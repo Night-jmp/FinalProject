@@ -100,6 +100,7 @@ char* Message::payloadToString(unsigned short payload, unsigned char length)
     for(int i = 0; i < length; i++)
     {
         //ADD LOGIC HERE
+        
     }
     return tempPayloadString;
 }
