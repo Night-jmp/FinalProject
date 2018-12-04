@@ -34,6 +34,7 @@
 		B94107EE21AF3E90008F24D1 /* Contact.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Contact.hpp; path = FinalProject/Contact.hpp; sourceTree = "<group>"; };
 		B94107F021AF3EB9008F24D1 /* Message.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Message.cpp; path = FinalProject/Message.cpp; sourceTree = "<group>"; };
 		B94107F121AF3EB9008F24D1 /* Message.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Message.hpp; path = FinalProject/Message.hpp; sourceTree = "<group>"; };
+		B941080921B7247B008F24D1 /* Eeprom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Eeprom.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +51,7 @@
 		B94107D621AF3DCD008F24D1 = {
 			isa = PBXGroup;
 			children = (
+				B941080921B7247B008F24D1 /* Eeprom.h */,
 				B94107EA21AF3E38008F24D1 /* Memory.cpp */,
 				B94107EB21AF3E38008F24D1 /* Memory.hpp */,
 				B94107ED21AF3E90008F24D1 /* Contact.cpp */,

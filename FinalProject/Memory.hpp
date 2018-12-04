@@ -38,7 +38,10 @@ protected:
 private:
     const unsigned short MAX_CONTACTS = 10;
     const unsigned short MAX_MESSAGES = 20;
-    // Add as you see fit
+    Contact nodeContact;
+    unsigned short numOfContacts = 0;
+    unsigned short numOfMessages = 0;
+    unsigned short offset;
     
 };
 
