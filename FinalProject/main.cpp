@@ -16,13 +16,14 @@ int main(int argc, const char * argv[]) {
     unsigned char* pFrom = &from;
     unsigned short payload = 7;
     unsigned char length = 3;
-    char const* mess = {"TEST"};
+    char const* mess = {"._.."};
     
     Message message(pFrom, pTo, payload,length);
     //std::cout << (int)message.getLength() << std::endl;
     
     Message newMessage(pFrom, pTo, mess);
     //std::cout << newMessage.getPayload() << std::endl;
+    std::cout << newMessage.getPayloadString() << std::endl;
 
     return 0;
 }
