@@ -16,17 +16,17 @@ Message::Message()
     senderUUID = nullptr;
     receiverUUID = nullptr;
     payload = 0;
-    length = 0;
+    messagelength = 0;
     
 }
 
 //Parameterized Constructor
-Message::Message(unsigned char* from, unsigned char* to, unsigned short payload, unsigned char length)
+Message::Message(unsigned char* from, unsigned char* to, unsigned short payload, unsigned char messagelength)
 {
     receiverUUID = to;
     senderUUID = from;
     this->payload = payload;
-    this->length = length;
+    this->messagelength = messagelength;
 }
 
 //Copy Constructor - Takes in C-string and converts it to payload bytes
@@ -39,9 +39,9 @@ Message::Message(unsigned char* from, unsigned char* to, char const* message)
 }
 
 //Setters
-void Message::setLength(unsigned char length)
+void Message::setLength(unsigned char messagelength)
 {
-    this->length = length;
+    this->messagelength = messagelength;
 }
 void Message::setTo(unsigned char* to)
 {
@@ -59,7 +59,7 @@ void Message::setPayload(unsigned short payload)
 //Getters
 unsigned char Message::getLength()
 {
-    return length;
+    return messagelength;
 }
 unsigned char* Message::getTo()
 {
@@ -83,31 +83,33 @@ unsigned short Message::stringToPayload(char const* message)
             tempPayload <<= 1;
             if(*(message + i) == '.')
             {
-                length++;
+               messagelength++;
             }
             else if(*(message + i) == '_')
             {
                 tempPayload++;
-                length++;
+                messagelength++;
             }
         }
         return tempPayload;
 }
-char* Message::payloadToString(unsigned short payload, unsigned char length)
+char* payloadToString(unsigned short payload, unsigned char messagelength)
 {
-    char* tempPayloadString = new char[16];
-    
-    for(int i = 0; i < length; i++)
-    {
-        //ADD LOGIC HERE
-        
-    }
-    return tempPayloadString;
+	char* tempPayloadString = new char[16];
+
+	for (int i = 0; i < messagelength; i++)
+	{
+		if (payload & 1 == 1)
+			tempPayloadString[15 - i] = '_';
+		else tempPayloadString[15 - i] = '.';
+		payload = payload >> 1;
+	}
+	return tempPayloadString;
 }
 char* Message::getPayloadString()
 {
     //Returns a C-string of the payload bytes
-    return payloadToString(payload, length);
+    return payloadToString(payload, messagelength);
    
 }
 
